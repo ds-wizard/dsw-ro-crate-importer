@@ -33,6 +33,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@ds-wizard/importer-sdk": "^0.2.0"
+    "@ds-wizard/importer-sdk": "^0.3.0"
   }
 }

@@ -1,4 +1,5 @@
 import * as $rdf from 'rdflib'
+import {processDataset} from './mapping/dataset'
 import {processPerson} from './mapping/person'
 import {processProject} from './mapping/project'
 
@@ -20,13 +21,14 @@ export class RoCrateProcessor {
                 resolve(store)
             })
         })
-            .then(store => {
-                console.log("Going to process the RDF....")
-                processPerson(this.importer, store)
-                processProject(this.importer, store)
-                console.log("RDF processed!")
-                logResult(this.importer)
-            })
+        .then(store => {
+            console.log("Going to process the RDF....")
+            processDataset(this.importer, store)
+            processPerson(this.importer, store)
+            processProject(this.importer, store)
+            console.log("RDF processed!")
+            logResult(this.importer)
+        })
     }
 
 }
